@@ -1,0 +1,77 @@
+.anamation {
+    animation: animate 2s ease-in-out forwards;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateX(-800px);
+        color: #FFF;
+    }
+
+    60% {
+        transform: translateX(0);
+    }
+
+    80% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(0);
+        color: #000;
+    }
+}
+
+.anamation2 {
+    animation: animate2 3s ease-in-out forwards;
+}
+.anamation3 {
+    animation: animate2 1s ease-in-out forwards;
+}
+
+@keyframes animate2 {
+    0% {
+        opacity: 0;
+
+    }
+
+    30% {
+        opacity: 25;
+    }
+
+    60% {
+        opacity: 50;
+    }
+
+    80% {
+        opacity: 75;
+    }
+
+    100% {
+        opacity: 100;
+    }
+}
+
+@keyframes animate3 {
+    100% {
+        opacity: 100;
+    }
+
+    80% {
+        opacity: 75;
+    }
+
+    60% {
+        opacity: 50;
+    }
+
+    30% {
+        opacity: 25;
+    }
+
+    0% {
+        opacity: 0;
+
+    }
+    
+}
