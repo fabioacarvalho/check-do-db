@@ -25,11 +25,11 @@
                         </span>
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="card" v-for="dado in qd1">
+                                <div class="card" >
                                     <div class="card-body">
-                                    <h5 class="card-title">{{ dado.target }}</h5>
-                                    <p class="card-text">{{ dado.descricao }}</p>
-                                    <button @click="concluirTarefa(dado.target, dado.nqd)" class="btn btn-success">Feito</button>
+                                    <h5 class="card-title">TITULO</h5>
+                                    <p class="card-text">DESCRIÇÃO</p>
+                                    <button  class="btn btn-success">Feito</button>
                                     </div>
                                 </div>
                             </div>
@@ -42,11 +42,11 @@
                         </span>
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="card" v-for="dado in qd2">
+                                <div class="card">
                                     <div class="card-body">
-                                    <h5 class="card-title">{{ dado.target }}</h5>
-                                    <p class="card-text">{{ dado.descricao }}</p>
-                                    <button @click="concluirTarefa(dado.target, dado.nqd)" class="btn btn-success">Feito</button>
+                                    <h5 class="card-title">TITULO</h5>
+                                    <p class="card-text">DESCRIÇÃO</p>
+                                    <button  class="btn btn-success">Feito</button>
                                     </div>
                                 </div>
                             </div>
@@ -60,11 +60,11 @@
                         </span>
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="card" v-for="dado in qd3">
+                                <div class="card" >
                                     <div class="card-body">
-                                    <h5 class="card-title">{{ dado.target }}</h5>
-                                    <p class="card-text">{{ dado.descricao }}</p>
-                                    <button @click="concluirTarefa(dado.target, dado.nqd)" class="btn btn-success">Feito</button>
+                                    <h5 class="card-title">TITULO</h5>
+                                    <p class="card-text">DECRICAO</p>
+                                    <button  class="btn btn-success">Feito</button>
                                     </div>
                                 </div>
                             </div>
@@ -78,11 +78,11 @@
                         </span>
                         <div class="row">
                             <div class="col-sm-6">
-                                <div class="card" v-for="dado in qd4">
+                                <div class="card">
                                     <div class="card-body">
-                                    <h5 class="card-title">{{ dado.target }}</h5>
-                                    <p class="card-text">{{ dado.descricao }}</p>
-                                    <button @click="concluirTarefa(dado.target, dado.nqd)" class="btn btn-success">Feito</button>
+                                    <h5 class="card-title">TITULO</h5>
+                                    <p class="card-text">DECRICAO</p>
+                                    <button  class="btn btn-success">Feito</button>
                                     </div>
                                 </div>
                             </div>

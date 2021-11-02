@@ -14,13 +14,14 @@ export default {
             status: false
         },
         status: [
-            {qd: 1, classe: 'Decida Quando Fazer'},
-            {qd: 2, classe: 'Faça Imediatamente'},
-            {qd: 3, classe: 'Faça Mais Tarde'},
-            {qd: 4, classe: 'Delegue Para Outra Pessoa'},
+            {qd: 1, classe: "Decida Quando Fazer"},
+            {qd: 2, classe: "Faça Imediatamente"},
+            {qd: 3, classe: "Faça Mais Tarde"},
+            {qd: 4, classe: "Delegue Para Outra Pessoa"},
         ],
         qd: '',
         info: false,
     },
 
 }
+

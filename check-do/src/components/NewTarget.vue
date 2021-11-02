@@ -14,7 +14,7 @@
             <div class="mb-3">
                 <label for="formGroupExampleInput2" class="form-label">Classifique sua tarefa:</label>
                 <select class="form-select" aria-label="Default select example" v-model="tarefa.valorSelecionado">
-                    <option v-for="valor in status" :value="valor.classe" >{{ valor.classe }}</option>
+                    <option >OPÇÕES</option>
                 </select>
             </div>
             <button @click="adicionarNovaTarefa" class="btn btn-success" :disabled="tarefa.nome == '' || tarefa.desc == '' || tarefa.valorSelecionado == ''">Adicionar</button>

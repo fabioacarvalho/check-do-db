@@ -2,6 +2,7 @@
   <nav class="navbar ">
             <h1>Check - Do <span id="versao">v.1</span></h1> 
             <section id="infos-links">
+                <span class="btn btn-dark bbtn" > <router-link to="/register"> REGISTRO </router-link></span>
                 <span>
                     <span id="name"  class="pa-1 justify-end"> Developed by <strong>Fábio Carvalho</strong></span>
                     <a class="pa-1" target="_blank" href="https://github.com/fabioacarvalho">
@@ -18,6 +19,7 @@
 
 <script>
 export default {
+    name: 'Header',
 
 }
 </script>
@@ -57,6 +59,11 @@ export default {
 
     #infos-links {
         font-family: var(--fonte-padrao1);
+    }
+
+    .bbtn {
+        text-decoration: none;
+        color: white;
     }
 
 
