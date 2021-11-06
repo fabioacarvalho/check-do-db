@@ -1,66 +1,71 @@
 <template>
     <!-- ADD NOVA TAREFA -->
 
-        <section v-if="newTarget" id="nova-tarefa" class="container col-6 anamation">
+    <section id="nova-tarefa" class="container col-6 anamation">
 
-            <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Nome Tarefa:</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Escreva o nome da sua tarefa" v-model='tarefa.nome'>
-            </div>
-            <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label" >Descrição:</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Alguma descrição..." v-model="tarefa.desc">
-            </div>
-            <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Classifique sua tarefa:</label>
-                <select class="form-select" aria-label="Default select example" v-model="tarefa.valorSelecionado">
-                    <option >OPÇÕES</option>
-                </select>
-            </div>
-            <button @click="adicionarNovaTarefa" class="btn btn-success" :disabled="tarefa.nome == '' || tarefa.desc == '' || tarefa.valorSelecionado == ''">Adicionar</button>
-            <button @click="newTarget = false" class="btn btn-danger">Cancelar</button>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Nome Tarefa:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Escreva o nome da sua tarefa" v-model='target.nometarefa'>
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label" >Descrição:</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Alguma descrição..." v-model="target.descricao">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Classifique sua tarefa:</label>
+            <select class="form-select" aria-label="Default select example" v-model="target.idcategoria">
+                <option v-for="dado in category" :value="dado.idcategoria" :key="dado.idcategoria">{{ dado.nomecategoria }}</option>
+            </select>
+        </div>
+        <button class="btn btn-success" :disabled="target.nometarefa == '' || target.descricao == '' || target.idcategoria == ''">Adicionar</button>
+        <router-link to="/" @click="reset"><button class="btn btn-danger">Cancelar</button></router-link>
 
-        </section>
+    </section>
 </template>
 
 <script>
+import axios from 'axios'
+import { baseApiUrl } from '@/global'
+
 export default {
     name: 'NewTarget',
+    data() {
+        return {
+            category: [],
+            target: {},
+            info: false
+        }
+    },
     methods: {
+        reset() {
+            this.target = {}
+        },
         adicionarNovaTarefa() {
-            
-            let item = this.status.filter(v => {
-                if(v.classe == this.tarefa.valorSelecionado) {
-                    this.qdSelecionado = v.qd
-                }
-            })
-            
-            const order = {
-                target: this.tarefa.nome,
-                descricao: this.tarefa.desc,
-                status: this.tarefa.status,
-                local: this.tarefa.valorSelecionado,
-                nqd: this.qdSelecionado
-            }
 
-            if(this.qdSelecionado == 1) {
-                this.qd1.push(order)
-            } else if (this.qdSelecionado == 2) {
-                this.qd2.push(order)
-            } else if (this.qdSelecionado == 3) {
-                this.qd3.push(order)
-            } else if (this.qdSelecionado == 4) {
-                this.qd4.push(order)
-            }
+           /*  let datenow = new Date.now()
+            let dateconc = datenow + 5 */
+                        
+            /* const order = {
+                nometarefa: this.target.nometarefa,
+                descricao: this.target.descricao,
+                situacao: this.target.situacao,
+                idcategoria: this.target.idcategoria,
+                idusuario: 2,
+                dataconclusao: dateconc
+            } */
 
-            this.newTarget = false
             this.info = true
 
-            this.tarefa.nome = ''
-            this.tarefa.desc = ''
-            this.tarefa.valorSelecionado = ''
-
-        },
+        },        
+        getCategory() {
+            const url = `${baseApiUrl}/category`
+            axios.get(url).then(res => {
+                this.category = res.data
+            })
+        }
+    },
+    mounted() {
+        this.getCategory()
     }
 
 }

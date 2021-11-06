@@ -1,15 +1,15 @@
 <template>
     <div>
         HOME
-        <Quadros />
+        <TaskBoard />
     </div>
 </template>
 
 <script>
-import Quadros from './TaskBoard.vue'
+import TaskBoard from './TaskBoard.vue'
 export default {
     name: 'Home',
-    components: { Quadros }
+    components: { TaskBoard }
 }
 </script>
 

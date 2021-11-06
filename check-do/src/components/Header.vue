@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar ">
-            <h1>Check - Do <span id="versao">v.1</span></h1> 
+            <h1 ><router-link to="/" class="router-link">Check - Do</router-link> <span id="versao">v.1</span></h1> 
             <section id="infos-links">
-                <span class="btn btn-dark bbtn" > <router-link to="/register"> REGISTRO </router-link></span>
-                <span>
+                <router-link to="/register" class="router-link"><span class="btn btn-dark bbtn" > REGISTRO </span></router-link>
+                <span> 
                     <span id="name"  class="pa-1 justify-end"> Developed by <strong>Fábio Carvalho</strong></span>
                     <a class="pa-1" target="_blank" href="https://github.com/fabioacarvalho">
                       <img height="40" src="https://www.vectorlogo.zone/logos/github/github-tile.svg" data-canonical-src="https://img.shields.io/badge/github-%23100000.svg?&amp;style=for-the-badge&amp;logo=github&amp;logoColor=white&amp;link=mailto:https://github.com/fabioacarvalho" style="max-width:100%;">
@@ -66,6 +66,14 @@ export default {
         color: white;
     }
 
+    .router-link {
+        text-decoration: none;
+        color: white;
+    }
+
+    .router-link:hover {
+        color: white;
+    }
 
     @media (max-width: 600px) {
         #name {

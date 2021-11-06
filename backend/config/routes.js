@@ -11,5 +11,11 @@ module.exports = app => {
     app.route('/users/:id')
         .get(app.api.user.getById)
         .put(app.api.user.save)
+    
+    app.route('/category')
+        .get(app.api.category.get)
+    
+    app.route('/target')
+        .get(app.api.target.get)
 
 }
