@@ -116,11 +116,11 @@ export default {
             const url = `${baseApiUrl}/target`
             axios.get(url).then(res => {
                 this.targets = res.data
-            })         
-        },
-        
+            })
+        },       
         
     },
+    
     mounted() {
         this.loadTarget()
 
